@@ -1,0 +1,26 @@
+&qspi {
+    status = "okay";
+
+    flash@0 {
+        compatible = "jedec,spi-nor";
+        reg = <0x0>;
+        #address-cells = <0x1>;
+        #size-cells = <0x1>;
+        spi-max-frequency = <15000000>;
+
+        partition@0 {
+            label = "firmware";
+            reg = <0x0 0x4E0000>;
+        };
+
+        partition@4E0000 {
+            label = "u-boot-script";
+            reg = <0x4E0000 0x20000>;
+        };
+
+        partition@500000 {
+            label = "safe-linux";
+            reg = <0x500000 0x3B00000>;
+        };
+    };
+};

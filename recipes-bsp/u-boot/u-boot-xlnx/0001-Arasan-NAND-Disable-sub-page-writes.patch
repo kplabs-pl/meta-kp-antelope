@@ -1,0 +1,22 @@
+From fc6ed9f73ddcc62a0c4db478e21615b6ca5e4789 Mon Sep 17 00:00:00 2001
+From: Maciej Nowak <mnowak@kplabs.pl>
+Date: Wed, 19 Apr 2023 07:34:46 +0000
+Subject: [PATCH] Arasan NAND: Disable sub-page writes
+
+---
+ drivers/mtd/nand/raw/arasan_nfc.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/drivers/mtd/nand/raw/arasan_nfc.c b/drivers/mtd/nand/raw/arasan_nfc.c
+index 0615e50378..9db7e26613 100644
+--- a/drivers/mtd/nand/raw/arasan_nfc.c
++++ b/drivers/mtd/nand/raw/arasan_nfc.c
+@@ -5,6 +5,8 @@
+  * Copyright (C) 2014 - 2015 Xilinx, Inc.
+  */
+ 
++#define CONFIG_SYS_NAND_NO_SUBPAGE_WRITE 1
++
+ #include <common.h>
+ #include <malloc.h>
+ #include <asm/io.h>

@@ -1,0 +1,50 @@
+&nand0 {
+    status = "okay";
+
+    chip@0 {
+        label = "dpu-nand";
+        reg = <0>;
+        #address-cells = <1>;
+        #size-cells = <1>;
+
+        nand-ecc-mode = "hw";
+        nand-ecc-algo = "bch";
+        nand-bus-width = <8>;
+        nand-rb = <0>;
+
+        partition@0 {
+            label = "linux-0";
+            reg = <0 0x20000000>;
+        };
+
+        partition@1 {
+            label = "linux-1";
+            reg = <0x20000000 0x20000000>;
+        };
+
+        partition@2 {
+            label = "linux-2";
+            reg = <0x40000000 0x20000000>;
+        };
+
+        partition@3 {
+            label = "linux-3";
+            reg = <0x60000000 0x20000000>;
+        };
+
+        partition@4 {
+            label = "linux-4";
+            reg = <0x80000000 0x20000000>;
+        };
+
+        partition@5 {
+            label = "linux-5";
+            reg = <0xA0000000 0x20000000>;
+        };
+
+        partition@6 {
+            label = "data";
+            reg = <0xC0000000 0x40000000>;
+        };
+    };
+};
