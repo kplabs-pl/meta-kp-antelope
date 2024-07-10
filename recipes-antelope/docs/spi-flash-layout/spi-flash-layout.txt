@@ -1,0 +1,3 @@
+0x000000 boot-firmware.bin
+0x4E0000 boot-pins.scr
+0x500000 antelope-safe-image-fit-antelope.fitimage
